@@ -1,5 +1,18 @@
 spring:
   profiles:
     active: default
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # docker의 컨테이너 간 연결을 위해 domain name에 db라고 명시
+    url: jdbc:mysql://db:3306/testdb?serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false&characterEncoding=UTF-8
+    username: root
+    password: test1234
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
 active.value: default
