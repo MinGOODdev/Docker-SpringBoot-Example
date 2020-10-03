@@ -14,6 +14,9 @@
 * docker network ls
 * docker network create testdb
 * docker run -d --name db -e MYSQL_ROOT_PASSWORD=test1234 -p 3306:3306 --network testdb mysql
+    * docker exec -it {CONTAINER_ID} /bin/bash
+    * mysql -u root -p 
+    * create database testdb;
 * docker build --build-arg PROFILE=dev --network testdb -t deploy-dev-db:0.1 .
 * docker run -d -p 8080:8080 --name deploy-dev-db --network testdb deploy-dev-db:0.1
 

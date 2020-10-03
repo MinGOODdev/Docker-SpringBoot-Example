@@ -1,5 +1,5 @@
 FROM maven:3.5.2-jdk-8-alpine AS maven_builder
-LABEL maintainer=Groot
+LABEL maintainer=Hardy
 
 # 이미지에 build 디렉토리 생성 후 pom.xml 복사
 COPY pom.xml /build/

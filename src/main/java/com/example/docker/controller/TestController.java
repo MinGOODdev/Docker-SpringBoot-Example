@@ -23,7 +23,7 @@ public class TestController {
     // 편의상 GET으로 함
     @GetMapping("/save")
     public void save() {
-        memberRepository.save(Member.builder().name("Shawn").build());
+        memberRepository.save(Member.builder().name("Hardy").build());
     }
 
     @GetMapping("/get")
