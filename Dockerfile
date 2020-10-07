@@ -13,8 +13,8 @@ FROM openjdk:8-jre-alpine
 WORKDIR /app
 COPY --from=maven_builder /build/target/docker-0.0.1-SNAPSHOT.jar /app/
 
-ARG PROFILE
-ENV SPRING_PROFILES_ACTIVE=${PROFILE}
+#ARG PROFILE
+#ENV SPRING_PROFILES_ACTIVE=${PROFILE}
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "docker-0.0.1-SNAPSHOT.jar"]
