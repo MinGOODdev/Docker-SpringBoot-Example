@@ -1,5 +1,5 @@
 FROM maven:3.5.2-jdk-8-alpine AS maven_builder
-LABEL maintainer=Groot
+LABEL maintainer=Hardy
 
 # 이미지에 build 디렉토리 생성 후 pom.xml 복사
 COPY pom.xml /build/
@@ -13,8 +13,8 @@ FROM openjdk:8-jre-alpine
 WORKDIR /app
 COPY --from=maven_builder /build/target/docker-0.0.1-SNAPSHOT.jar /app/
 
-ARG PROFILE
-ENV SPRING_PROFILES_ACTIVE=${PROFILE}
+#ARG PROFILE
+#ENV SPRING_PROFILES_ACTIVE=${PROFILE}
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "docker-0.0.1-SNAPSHOT.jar"]
